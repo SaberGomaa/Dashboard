@@ -6,10 +6,15 @@ using System.Web.Mvc;
 
 namespace Dashboard.Controllers
 {
-    public class HomeController : Controller
+    public class OperationController : Controller
     {
-        // GET: Home
+        // GET: Operation
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Login()
         {
             return View();
         }

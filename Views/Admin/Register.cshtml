@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Regiter Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/CSS/login.css" />
+
+<div class="wrapper" >
+    <div class="title">
+        Add an admin
+        <p>It's quick and easy</p>
+    </div>
+    <form action="#">
+        <div class="field">
+            <input type="text" required>
+            <label for="">Name</label>
+        </div>
+
+        
+
+        <div class="field">
+            <input type="email" required>
+            <label for="">Email Address</label>
+        </div>
+
+        <div class="field">
+            <input type="text" required>
+            <label for="">Phone</label>
+        </div>
+        <div class="field">
+            <input type="password" required>
+            <label for="">Password</label>
+        </div>
+
+        <div class="field">
+            <input type="password" required>
+            <label for="">Confirm Password</label>
+        </div>
+
+      
+        <div class="field">
+            <input type="submit" value="Sign Up">
+        </div>
+
+        <div class="signup-link">
+            Already have an account?<a href="#"> Login Now</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/CSS/login.css"/>
+
+<div class="wrapper">
+    <div class="title" style="text-align:center">
+        Login
+        <p>It's quick and easy</p>
+    </div>
+    <form action="#">
+
+        <div class="field">
+            <input type="email" required>
+            <label for="">Email Address</label>
+        </div>
+
+        <div class="field">
+            <input type="password" required>
+            <label for="">Password</label>
+        </div>
+
+       
+        <div class="content">
+            <div class="checkbox">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </div>
+            <div class="pass-link" >
+                <a href="#">Forgot password?</a>
+            </div>
+        </div>
+        <div class="field">
+            <input type="submit" value="Login">
+        </div>
+
+        <div class="signup-link">
+            Don't' have an account?<a href="#"> Sign Up</a>
+        </div>
+    </form>
+</div>

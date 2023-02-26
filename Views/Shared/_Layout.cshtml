@@ -10,29 +10,28 @@
 
 </head>
 <body style="background-color:#d1d1d1">
-    <header style="margin-bottom:10px">
-        <div class="inner-width">
-            <h1 class="logo"><span><img src="~/Attach/icon.png" height="50" width="50" /></span></h1>
-            <i class="menu-toggle-btn fas fa-bars"></i>
-            <nav class="navigation-menu">
-                <a href="#"><i class="fas fa-home home"></i> Home</a>
-                <a href="#"> Posts</a>
-                <a href="#"></i> Users</a>
-                <a href="#"></i> Tickets</a>
-                <a href="#"></i> Train</a>
-                <a href="#"></i> Reports</a>
-                <a href="#" class="aj_btn">
-                    <i class="fas fa-lock" aria-hidden="true"></i>
-                    LOGIN
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <div  style="display:flex;justify-content:center;">
-        <div>
+    <div>
+        <header style="margin-bottom:10px">
+            <div class="inner-width">
+                <h1 class="logo"><span><img src="~/Attach/icon.png" height="50" width="50" /></span></h1>
+                <i class="menu-toggle-btn fas fa-bars"></i>
+                <nav class="navigation-menu">
+                    <a href="#"><i class="fas fa-home home"></i> Home</a>
+                    <a href="#"> Posts</a>
+                    <a href="#"></i> Users</a>
+                    <a href="#"></i> Tickets</a>
+                    <a href="#"></i> Train</a>
+                    <a href="#"></i> Reports</a>
+                    <a href="#" class="aj_btn">
+                        <i class="fas fa-lock" aria-hidden="true"></i>
+                        LOGIN
+                    </a>
+                </nav>
+            </div>
+        </header>
+    </div>  
+    <div style="display: flex; align-items: center; justify-content: center;">
             @RenderBody()
-        </div>
     </div>
 
     <script src="~/Scripts/JS/header.js"></script>

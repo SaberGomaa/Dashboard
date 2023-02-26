@@ -8,7 +8,7 @@
 }
 
 header {
-    height: 90px;
+    height: 107px;
     background: #0AA1DD;
 }
 
@@ -20,13 +20,11 @@ header {
 
 .logo {
     float: left;
-    padding: 27px 0;
+    padding: 27px ;
     color: #fff;
 }
 
-    .logo img {
-        height: 50px;
-    }
+    
 
 .navigation-menu {
     float: right;
@@ -120,9 +118,4 @@ a.aj_btn {
         .navigation-menu.active {
             display: block;
         }
-}
-.contain {
-    display:flex;
-    justify-content:center;
-    width:fit-content;
 }

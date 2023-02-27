@@ -12,10 +12,8 @@
     <title>Profile </title>
     <link href="~/Attach/icon.png" rel="icon" />
 
-    <!-- Custom Css -->
     <link rel="stylesheet" href="~/Content/CSS/profile.css" />
 
-    <!-- FontAwesome 5 -->
 </head>
 <body>
     <!-- Navbar top -->
@@ -37,9 +35,9 @@
                 </a>
             </li>
             <li>
-                <a href="#sign-out">
-                    <img src="~/Attach/icon.png" width="20" height="20" /> Logout
-                </a>
+                <img src="~/Attach/icon.png" width="20" height="20" />
+                @Html.ActionLink("Logout", "Logout", "operation")
+
             </li>
         </ul>
         <!-- End -->

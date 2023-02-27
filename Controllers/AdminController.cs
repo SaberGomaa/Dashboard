@@ -45,7 +45,7 @@ namespace Dashboard.Controllers
             }
             }
 
-        public ActionResult Profile(Admin admin)
+        public new ActionResult Profile(Admin admin)
         {
             return View(admin);
         }

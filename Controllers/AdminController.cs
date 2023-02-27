@@ -44,6 +44,12 @@ namespace Dashboard.Controllers
                 return View("Error");
             }
             }
+
+        public ActionResult Profile(Admin admin)
+        {
+            return View(admin);
+        }
+
         public ActionResult Register()
         {
             return View();

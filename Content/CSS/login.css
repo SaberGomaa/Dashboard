@@ -7,6 +7,8 @@
     color: #fff;
 }
 
+
+
 .wrapper {
     width: 500px;
     background: #fff;
@@ -40,6 +42,20 @@
         position: relative;
     }
 
+        .wrapper form .field .inputs {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            font-size: 17px;
+            padding-left: 20px;
+            border: 1px solid lightgray;
+            transition: all 0.3s ease;
+        }
+
+            .wrapper form .field .inputs:focus,
+            form .field input:valid {
+                border-color: #4158d0;
+            }
         .wrapper form .field input {
             height: 100%;
             width: 100%;
@@ -50,10 +66,10 @@
             transition: all 0.3s ease;
         }
 
-            .wrapper form .field input:focus,
-            form .field input:valid {
-                border-color: #4158d0;
-            }
+        .wrapper form .field .input:focus,
+        form .field input:valid {
+            border-color: #4158d0;
+        }
 
         .wrapper form .field label {
             position: absolute;

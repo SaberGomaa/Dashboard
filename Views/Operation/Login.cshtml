@@ -1,4 +1,4 @@
-﻿
+﻿@model Dashboard.Models.LoginAdmin
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,22 +11,23 @@
             Login
             <p>It's quick and easy</p>
         </div>
-        <form action="#">
+        <form method="post">
 
             <div class="field">
-                <input type="email" required>
-                <label for="">Email Address</label>
+                @Html.TextBoxFor(n => n.Phone, new { @class = "inputs" })
+                <label for="">Phone Number</label>
+                <span style="color:red;margin-bottom : 25px  ">@Html.ValidationMessageFor(n => n.Phone)</span>
             </div>
 
             <div class="field">
-                <input type="password" required>
-                <label for="">Password</label>
+                @Html.TextBoxFor(n => n.Password, new { @class = "inputs" })
+                <label>Password</label>
+                    <span style="color:red;margin-bottom : 25px  ">@Html.ValidationMessageFor(n => n.Password)</span>
             </div>
-
 
             <div class="content">
                 <div class="checkbox">
-                    <input type="checkbox" id="remember-me">
+                    @Html.CheckBox("saveme", false , new {@class="inputs"})
                     <label for="remember-me">Remember Me</label>
                 </div>
                 <div class="pass-link">
@@ -34,7 +35,7 @@
                 </div>
             </div>
             <div class="field">
-                <input type="submit" value="Login">
+                <input type="submit" value="login" class="inputs"/>
             </div>
 
             <div class="signup-link">

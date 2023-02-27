@@ -22,16 +22,21 @@
                     <a href="#"></i> Tickets</a>
                     <a href="#"></i> Train</a>
                     <a href="#"></i> Reports</a>
-                    <a href="#" class="aj_btn">
-                        <i class="fas fa-lock" aria-hidden="true"></i>
-                        LOGIN
-                    </a>
+                    @if (Session["AdminId"] != null)
+                    {
+                        @Html.ActionLink("Logout", "Logout", "operation", null, new { @class = "aj_btn" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Login", "Login", "operation", null, new { @class = "aj_btn" })
+
+                    }
                 </nav>
             </div>
         </header>
-    </div>  
+    </div>
     <div style="display: flex; align-items: center; justify-content: center;">
-            @RenderBody()
+        @RenderBody()
     </div>
 
     <script src="~/Scripts/JS/header.js"></script>

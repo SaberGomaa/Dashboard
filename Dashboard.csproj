@@ -130,6 +130,7 @@
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\LiveLocation.cs" />
+    <Compile Include="Models\LoginAdmin.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Post.cs" />
@@ -148,6 +149,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CSS\login.css" />
     <Content Include="Content\CSS\navbar.css" />
+    <Content Include="Content\CSS\profile.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -181,6 +183,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Operation\Login.cshtml" />
     <Content Include="Views\Admin\Register.cshtml" />
+    <Content Include="Views\Admin\Profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

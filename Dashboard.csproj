@@ -148,8 +148,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CSS\login.css" />
+    <Content Include="Content\CSS\MainHome.css" />
     <Content Include="Content\CSS\navbar.css" />
     <Content Include="Content\CSS\profile.css" />
+    <Content Include="Content\CSS\ResponsiveHome.css" />
+    <Content Include="Content\Js\Home.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -184,6 +187,7 @@
     <Content Include="Views\Operation\Login.cshtml" />
     <Content Include="Views\Admin\Register.cshtml" />
     <Content Include="Views\Admin\Profile.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

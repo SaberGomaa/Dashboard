@@ -1,46 +1,60 @@
 ﻿@model Dashboard.Models.LoginAdmin
 @{
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout2.cshtml";
+    Layout = null;
+
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile </title>
+    <link href="~/Attach/icon.png" rel="icon" />
 
-<link rel="stylesheet" href="~/Content/CSS/login.css"/>
-<div>
-    <div class="wrapper">
-        <div class="title" style="text-align:center">
-            Login
-            <p>It's quick and easy</p>
-        </div>
-        <form method="post">
+    <link rel="stylesheet" href="~/Content/CSS/login.css" />
 
-            <div class="field">
-                @Html.TextBoxFor(n => n.Phone, new { @class = "inputs" })
-                <label for="">Phone Number</label>
-                <span style="color:red;margin-bottom : 25px  ">@Html.ValidationMessageFor(n => n.Phone)</span>
+</head>
+<body style="background-color:#eee">
+    <div style="display:flex;justify-content:center; align-content:center; margin-top:150px">
+        <div class="wrapper">
+            <div class="title" style="text-align:center">
+                Login
+                <p>It's quick and easy</p>
             </div>
+            <form method="post">
 
-            <div class="field">
-                @Html.TextBoxFor(n => n.Password, new { @class = "inputs" })
-                <label>Password</label>
+                <div class="field">
+                    @Html.TextBoxFor(n => n.Phone, new { @class = "inputs" })
+                    <label for="">Phone Number</label>
+                    <span style="color:red;margin-bottom : 25px  ">@Html.ValidationMessageFor(n => n.Phone)</span>
+                </div>
+
+                <div class="field">
+                    @Html.TextBoxFor(n => n.Password, new { @class = "inputs" })
+                    <label>Password</label>
                     <span style="color:red;margin-bottom : 25px  ">@Html.ValidationMessageFor(n => n.Password)</span>
-            </div>
-
-            <div class="content">
-                <div class="checkbox">
-                    @Html.CheckBox("saveme", false , new {@class="inputs"})
-                    <label for="remember-me">Remember Me</label>
                 </div>
-                <div class="pass-link">
-                    <a href="#">Forgot password?</a>
-                </div>
-            </div>
-            <div class="field">
-                <input type="submit" value="login" class="inputs"/>
-            </div>
 
-            <div class="signup-link">
-                Don't' have an account?<a href="#"> Sign Up</a>
-            </div>
-        </form>
+                <div class="content">
+                    <div class="checkbox">
+                        @Html.CheckBox("saveme", false, new { @class = "inputs" })
+                        <label for="remember-me">Remember Me</label>
+                    </div>
+                    <div class="pass-link">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </div>
+                <div class="field">
+                    <input type="submit" value="login" class="inputs" />
+                </div>
+
+                <div class="signup-link">
+                    Don't' have an account?<a href="#"> Sign Up</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+</body>
+</html>

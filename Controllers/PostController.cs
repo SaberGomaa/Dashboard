@@ -8,36 +8,35 @@ using Test.Models;
 
 namespace Dashboard.Controllers
 {
-    public class AdminController : Controller
+    public class PostController : Controller
     {
+
         public HttpClient client = new HttpClient();
-        public AdminController()
+
+        public PostController()
         {
             client.BaseAddress = new Uri("https://trainapiegypt.azurewebsites.net/api/");
         }
-
-        // GET: Admin
         public ActionResult Index()
         {
             return View();
         }
 
-
-        public ActionResult view()
+        public ActionResult Show()
         {
             try
             {
-                var result = client.GetAsync("admin/getadmins").Result;
+                var result = client.GetAsync("post/getallposts").Result;
 
-                var admins = result.Content.ReadAsAsync<List<Admin>>().Result;
+                var posts = result.Content.ReadAsAsync<List<Post>>().Result;
 
-                if (admins == null)
+                if (posts == null)
                 {
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    return View(admins);
+                    return View(posts);
                 }
             }
             catch
@@ -45,16 +44,5 @@ namespace Dashboard.Controllers
                 return View("Error");
             }
         }
-
-        public new ActionResult Profile(Admin admin)
-        {
-            return View(admin);
-        }
-
-        public ActionResult Register()
-        {
-            return View();
-        }
     }
-    
 }

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Test.Models.Post>
+
+@{
+    ViewBag.Title = "All Posts";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/CSS/allposts.css" />
+<div class="container">
+    <div class="grid">
+        @{ foreach (var post in Model)
+            {
+                <div class="card">
+                    <div class="card_img">
+                        <img src="~/Attach/@post.Img" alt="">
+                    </div>
+                    <div class="card_body">
+                        <h2 class="card_title">@post.TrainNumber</h2>
+                        <p>@post.Content</p>
+                        @Html.ActionLink("View User Profile ", "profile", "user", new { id = post.UserId }, new {@class= "read_more" });
+                    </div>
+                </div>}
+            }
+    </div>
+</div>

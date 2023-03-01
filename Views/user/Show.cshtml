@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Test.Models.User>
+
+@{
+    ViewBag.Title = "All Users";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="~/Content/CSS/ShowAllUsers.css" />
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box clearfix">
+                <div class="table-responsive">
+                    <table class="table user-list" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th><span>User Name </span></th>
+                                <th class="text-center"><span>Gender</span></th>
+                                <th><span>Email</span></th>
+                                <th><span>Jop</span></th>
+                                <th><span>Phone</span></th>
+                                <th><span>Address</span></th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ foreach (var user in Model)
+                                {
+                                    <tr style="text-align:center">
+                                        <td>
+                                            <img src="~/Attach/icon.png" alt="">
+                                            <a href="#" class="user-link">@user.Name</a>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <span class="label label-default">@user.Gender</span>
+                                        </td>
+                                        <td>
+                                            <a href="#">@user.Email</a>
+                                        </td>
+                                        <td>@user.Jop</td>
+                                        <td>@user.Phone</td>
+                                        <td>@user.Address</td>
+                                        <td style="width: 20%;">
+                                            <a href="#" class="table-link">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                            <a href="#" class="table-link">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                            <a href="#" class="table-link danger">
+                                                <span class="fa-stack">
+                                                    <i class="fa fa-square fa-stack-2x"></i>
+                                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    }
+                                }
+                        </tbody>
+                    </table>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>

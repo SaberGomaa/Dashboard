@@ -35,9 +35,9 @@ namespace Dashboard.Controllers
 
             if (admin != null)
             {
-                Session.Add("AdminId", admin.Id);
+                Session.Add("Admin", admin);
 
-                return RedirectToAction("Profile", "Admin" , admin);
+                return RedirectToAction("show", "user");
             }
             else
             {
@@ -46,7 +46,7 @@ namespace Dashboard.Controllers
         }
         public ActionResult Logout()
         {
-            Session["AdminId"] = null;
+            Session["Admin"] = null;
 
             return RedirectToAction("login");
         }

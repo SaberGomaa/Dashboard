@@ -8,7 +8,10 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
+.logout-link {
+    text-decoration:none;
+    color:black;
+}
 :root {
     --background-color1: #fafaff;
     --background-color2: #ffffff;

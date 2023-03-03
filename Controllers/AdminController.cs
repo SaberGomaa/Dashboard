@@ -51,6 +51,20 @@ namespace Dashboard.Controllers
             return View(admin);
         }
 
+        public ActionResult Delete(int id) 
+        {
+            var deleteAdmin = client.DeleteAsync("admin/DeleteAdmin/"+ id).Result;
+
+            if (deleteAdmin.IsSuccessStatusCode)
+            {
+                return RedirectToAction("view");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
         public ActionResult Register()
         {
             return View();

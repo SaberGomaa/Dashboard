@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Test.Models.News>
+
+@{
+    ViewBag.Title = "All News";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<div style="margin:20px">
+    @Html.ActionLink("Add News", "create", "news", null, new { @class = "btn-add" })
+</div>
+<link rel="stylesheet" href="~/Content/CSS/allposts.css" />
+<div class="container">
+    <div class="grid">
+        @{ foreach (var news in Model)
+            {
+                <div class="card">
+                    <div class="card_img">
+                        <img src="~/Attach/@news.Img" alt="">
+                    </div>
+                    <div class="card_body">
+                        <p>@news.ContentOfPost</p>
+                        <small>@news.date</small>
+                        @Html.ActionLink("Edit", "Edit", "news", new { id = news.Id }, new { @class = "read_more edit" })
+                        @Html.ActionLink("Delete", "Delete", "news", new { id = news.Id }, new { @class = "delete read_more" })
+
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

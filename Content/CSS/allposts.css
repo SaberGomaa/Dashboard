@@ -18,7 +18,23 @@ body {
 }
 */
 
+.delete{
+    background-color:red!important;
 
+}
+
+.edit {
+    background-color: #0e8492 !important;
+}
+
+.btn-add {
+    background-color: #3f0097    !important;
+    width: 50px;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 20px
+}
 .container {
     max-width: 70%;
     margin: 0 auto;
@@ -84,7 +100,7 @@ a.read_more {
     font-size: 13px;
     text-decoration: none;
     letter-spacing: 1.1px;
-    background: #0F1616;
+    background: #0e8492;
     margin-top: 50px;
     padding: 24px 0px;
     border-radius: 15px;

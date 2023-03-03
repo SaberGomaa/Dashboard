@@ -44,5 +44,18 @@ namespace Dashboard.Controllers
                 return View("Error");
             }
         }
+
+        public  ActionResult Delete(int id)
+        {
+            var result = client.DeleteAsync("post/deletepost/" + id).Result;
+            if (result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("show");
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
     }
 }

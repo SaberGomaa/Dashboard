@@ -123,6 +123,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\OperationController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\userController.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Models\Station.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\Train.cs" />
+    <Compile Include="Models\updateNews.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -196,6 +198,9 @@
     <Content Include="Views\Post\Show.cshtml" />
     <Content Include="Views\user\Profile.cshtml" />
     <Content Include="Views\user\Show.cshtml" />
+    <Content Include="Views\News\Show.cshtml" />
+    <Content Include="Views\News\Edit.cshtml" />
+    <Content Include="Views\News\create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

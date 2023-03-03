@@ -15,9 +15,11 @@
                         <img src="~/Attach/@post.Img" alt="">
                     </div>
                     <div class="card_body">
-                        <h2 class="card_title">@post.TrainNumber</h2>
+                        @*<h2 class="card_title">@post.TrainNumber</h2>*@
                         <p>@post.Content</p>
-                        @Html.ActionLink("View User Profile ", "profile", "user", new { id = post.UserId }, new {@class= "read_more" });
+                        @Html.ActionLink("View User Profile ", "profile", "user", new { id = post.UserId }, new { @class = "read_more" })
+                        @Html.ActionLink("Delete", "Delete", "post", new { id = post.Id }, new { @class = "delete read_more" })
+
                     </div>
                 </div>}
             }

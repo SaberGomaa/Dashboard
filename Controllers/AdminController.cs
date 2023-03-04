@@ -46,9 +46,9 @@ namespace Dashboard.Controllers
             }
         }
 
-        public new ActionResult Profile(Admin admin)
+        public new ActionResult Profile()
         {
-            return View(admin);
+            return View(Session["Admin"]);
         }
 
         public ActionResult Delete(int id) 

@@ -69,8 +69,12 @@ namespace Dashboard.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(int id , updateNews news )
+        public ActionResult Edit(int id , updateNews news , HttpPostedFileBase photo)
         {
+            photo.SaveAs(Server.MapPath("~/Attach/" + photo.FileName));
+
+            news.Img = photo.FileName;
+
             var result = client.PutAsJsonAsync("news/updatenews?NewsId=" + id, news).Result;
 
             if (result.IsSuccessStatusCode)
@@ -89,8 +93,12 @@ namespace Dashboard.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(updateNews news)
+        public ActionResult Create(updateNews news , HttpPostedFileBase photo)
         {
+            photo.SaveAs(Server.MapPath("~/Attach/" + photo.FileName));
+
+            news.Img = photo.FileName;
+
             var result = client.PostAsJsonAsync("news/createnews", news).Result;
             if (result.IsSuccessStatusCode)
             {

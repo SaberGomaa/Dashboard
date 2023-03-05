@@ -150,9 +150,9 @@ header {
         width: 5px;
     }
 
-    .main::-webkit-scrollbar-track {
+    /*.main::-webkit-scrollbar-track {
         background-color: #9e9e9eb2;
-    }
+    }*/
 
 .box-container {
     display: flex;

@@ -1,49 +1,47 @@
-﻿@{
-    ViewBag.Title = "Regiter Admin";
+﻿@model Test.Models.Admin
+@{
+    ViewBag.Title = "Register Admin";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
 <link rel="stylesheet" href="~/Content/CSS/login.css" />
 
-<div class="wrapper" >
+<div class="wrapper">
     <div class="title">
         Add an admin
         <p>It's quick and easy</p>
     </div>
-    <form action="#">
+    <form method="post">
         <div class="field">
-            <input type="text" required>
+            @Html.TextBoxFor(n => n.Name, new { @class = "inputs" })
             <label for="">Name</label>
         </div>
 
-        
+
 
         <div class="field">
-            <input type="email" required>
+            @Html.TextBoxFor(n => n.Email, new { @class = "inputs" })
             <label for="">Email Address</label>
         </div>
 
         <div class="field">
-            <input type="text" required>
+            @Html.TextBoxFor(n => n.Phone, new { @class = "inputs" })
             <label for="">Phone</label>
         </div>
         <div class="field">
-            <input type="password" required>
+            @Html.PasswordFor(n => n.Password, new { @class = "inputs" })
             <label for="">Password</label>
         </div>
 
         <div class="field">
-            <input type="password" required>
-            <label for="">Confirm Password</label>
+            @Html.TextBoxFor(n => n.AdminDegree, new { @class = "inputs" })
+            <label for="">Admin Degree</label>
         </div>
 
-      
+
         <div class="field">
             <input type="submit" value="Add">
         </div>
 
-        <div class="signup-link">
-            Already have an account?<a href="#"> Login Now</a>
-        </div>
     </form>
 </div>

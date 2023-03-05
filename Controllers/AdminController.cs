@@ -23,6 +23,28 @@ namespace Dashboard.Controllers
         }
 
 
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(Admin admin)
+        {
+            admin.Id = 0;
+            var result = client.PostAsJsonAsync("admin/createadmin", admin).Result;
+
+            if (result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("view");
+            }
+            else
+            {
+                return View("Error");
+
+            }
+        }
+
         public ActionResult view()
         {
             try
@@ -65,10 +87,7 @@ namespace Dashboard.Controllers
             }
         }
 
-        public ActionResult Register()
-        {
-            return View();
-        }
+       
     }
     
 }

@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="field">
-                    @Html.TextBoxFor(n => n.Password, new { @class = "inputs" })
+                    @Html.PasswordFor(n => n.Password, new { @class = "inputs" })
                     <label>Password</label>
                     <span style="color:red;margin-bottom : 25px  ">@Html.ValidationMessageFor(n => n.Password)</span>
                 </div>

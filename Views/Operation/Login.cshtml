@@ -28,7 +28,7 @@
                 <div class="field">
                     @Html.TextBoxFor(n => n.Phone, new { @class = "inputs" })
                     <label for="">Phone Number</label>
-                    <span style="color:red;margin-bottom : 25px  ">@Html.ValidationMessageFor(n => n.Phone)</span>
+                    @Html.ValidationMessageFor(n => n.Phone)
                 </div>
 
                 <div class="field">

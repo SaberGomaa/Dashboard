@@ -24,17 +24,35 @@ namespace Dashboard.Controllers
 
         public ActionResult Login()
         {
+            if (Request.Cookies["logindata"] != null)
+            {
+                Session["Admin"] = Request.Cookies["logindata"].Values["Admin"].ToString();
+                return RedirectToAction("show", "user");
+            }
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(LoginAdmin login ) 
+        public ActionResult Login(LoginAdmin login , bool saveme) 
         {
             var Result = client.GetAsync("admin/getloginadmin/"+login.Phone +"/"+login.Password).Result;
             var admin = Result.Content.ReadAsAsync<Admin>().Result;
 
             if (admin != null)
             {
+
+                if(saveme == true)
+                {
+                    HttpCookie co = new HttpCookie("logindata");
+                    co.Values.Add("id", admin.Id.ToString());
+                    co.Values.Add("name", admin.Name);
+                    co.Values.Add("Admin", admin.ToString());
+
+                    co.Expires= DateTime.Now.AddDays(1);
+
+                    Response.Cookies.Add(co);
+                }
+
                 Session.Add("Admin", admin);
 
                 return RedirectToAction("show", "user");
@@ -47,6 +65,8 @@ namespace Dashboard.Controllers
         public ActionResult Logout()
         {
             Session["Admin"] = null;
+
+
 
             return RedirectToAction("login");
         }

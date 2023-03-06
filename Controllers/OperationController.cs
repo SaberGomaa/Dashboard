@@ -66,7 +66,9 @@ namespace Dashboard.Controllers
         {
             Session["Admin"] = null;
 
-
+            HttpCookie c = new HttpCookie("logindata");
+            c.Expires = DateTime.Now.AddDays(-2);
+            Response.Cookies.Add(c);
 
             return RedirectToAction("login");
         }

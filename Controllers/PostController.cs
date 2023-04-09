@@ -75,15 +75,19 @@ namespace Dashboard.Controllers
 
         public ActionResult Abrove(int id)
         {
-         
-            var r = client.GetAsync("post/getpost/"+id).Result;
-            var post = r.Content.ReadAsAsync<Post>().Result;
 
+            var res = client.GetAsync("post/getpost/"+id).Result;
 
-            var result = client.PostAsJsonAsync("Post/UpdatePost/" + id, post).Result;
+            var post = res.Content.ReadAsAsync<Post>().Result;
 
-             return RedirectToAction("Abrove");
-          
+            post.Critical= true;
+
+            var result = client.PutAsJsonAsync("Post/UpdatePost/" + post.Id, post).Result;
+
+            if (result.IsSuccessStatusCode)
+                return RedirectToAction("AbrovePosts");
+            else
+                return View("Error");
         }
 
         public  ActionResult Delete(int id)

@@ -72,33 +72,18 @@ namespace Dashboard.Controllers
             }
         }
 
-        [HttpPut]
-        public ActionResult Abrove (Post post ,  int id)
+
+        public ActionResult Abrove(int id)
         {
-            try
-            {
+         
+            var r = client.GetAsync("post/getpost/"+id).Result;
+            var post = r.Content.ReadAsAsync<Post>().Result;
 
-                var r = client.GetAsync("post/getpost/"+id).Result;
-                post = r.Content.ReadAsAsync<Post>().Result;
 
-                post.Critical = true;
+            var result = client.PostAsJsonAsync("Post/UpdatePost/" + id, post).Result;
 
-                var result = client.PutAsJsonAsync("Post/UpdatePost/" + id, post).Result;
-
-                if (result.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Abrove");
-                }
-                else
-                {
-                    return View("Error");
-                }
-
-            }
-            catch
-            {
-                return View("Error");
-            }
+             return RedirectToAction("Abrove");
+          
         }
 
         public  ActionResult Delete(int id)

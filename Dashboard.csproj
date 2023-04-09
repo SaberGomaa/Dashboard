@@ -201,6 +201,7 @@
     <Content Include="Views\News\Show.cshtml" />
     <Content Include="Views\News\Edit.cshtml" />
     <Content Include="Views\News\create.cshtml" />
+    <Content Include="Views\Post\AbrovePosts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,7 +6,7 @@
 }
 
 <div style="margin:20px">
-    @Html.ActionLink("Abrove Critical Posts", "AbrovePosts", "post", null, new { @class = "btn-add" })
+    @Html.ActionLink("Go To All Posts", "show", "post", null, new { @class = "btn-add" })
 </div>
 
 <link rel="stylesheet" href="~/Content/CSS/allposts.css" />
@@ -21,11 +21,10 @@
                     <div class="card_body">
                         @*<h2 class="card_title">@post.TrainNumber</h2>*@
                         <p>@post.Content</p>
-                        @Html.ActionLink("View User Profile ", "profile", "user", new { id = post.UserId }, new { @class = "read_more" })
+                        @Html.ActionLink("Abrove ", "Abrove", "post", new { id = post.Id }, new { @class = "read_more" })
                         @Html.ActionLink("Delete", "Delete", "post", new { id = post.Id }, new { @class = "delete read_more" })
-
                     </div>
                 </div>}
-            }
+        }
     </div>
 </div>

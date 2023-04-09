@@ -30,14 +30,70 @@ namespace Dashboard.Controllers
 
                 var posts = result.Content.ReadAsAsync<List<Post>>().Result;
 
-                if (posts == null)
+                var AcceptedCriricalPosts = posts.Where(c=>c.Critical == true).ToList();
+
+                if (AcceptedCriricalPosts == null)
                 {
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    return View(posts);
+                    return View(AcceptedCriricalPosts);
                 }
+            }
+            catch
+            {
+                return View("Error");
+            }
+        }
+
+        public ActionResult AbrovePosts()
+        {
+            try
+            {
+                var result = client.GetAsync("post/getallposts").Result;
+
+                var posts = result.Content.ReadAsAsync<List<Post>>().Result;
+
+                var AcceptedCriricalPosts = posts.Where(c => c.Critical == false).ToList();
+
+                if (AcceptedCriricalPosts == null)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View(AcceptedCriricalPosts);
+                }
+            }
+            catch
+            {
+                return View("Error");
+            }
+        }
+
+        [HttpPut]
+        public ActionResult Abrove (Post post ,  int id)
+        {
+            try
+            {
+
+                var r = client.GetAsync("post/getpost/"+id).Result;
+                post = r.Content.ReadAsAsync<Post>().Result;
+
+                post.Critical = true;
+
+                var result = client.PutAsJsonAsync("Post/UpdatePost/" + id, post).Result;
+
+                if (result.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Abrove");
+                }
+                else
+                {
+                    return View("Error");
+                }
+
             }
             catch
             {

@@ -12,6 +12,8 @@ namespace Test.Models
         public int Id { get; set; }
         public string Degree { get; set; }
         public int NumOfSeat { get; set; }
+        public string TrainNumber { get; set; }
+
         public int NumOfTrainCars { get; set; }
         //////
         public string Conductor { get; set; }

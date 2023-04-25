@@ -14,7 +14,7 @@ namespace Dashboard.Controllers
         public HttpClient client = new HttpClient();
         public OperationController()
         {
-            client.BaseAddress = new Uri("https://trainapiegypt.azurewebsites.net/api/");
+            client.BaseAddress = new Uri("http://saberelsayed-001-site1.itempurl.com/api/");
         }
         // GET: Operation
         public ActionResult Index()
